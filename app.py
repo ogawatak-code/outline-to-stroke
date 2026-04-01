@@ -163,7 +163,7 @@ if uploaded:
     col1, col2 = st.columns(2)
     with col1:
         st.markdown("**入力プレビュー**")
-        st.image(svg_bytes, use_container_width=True)
+        st.components.v1.html(svg_bytes.decode('utf-8'), height=300, scrolling=True)
 
     if st.button("▶ 変換実行", type="primary"):
         with st.spinner("処理中..."):
@@ -175,7 +175,7 @@ if uploaded:
 
                 with col2:
                     st.markdown("**出力プレビュー**")
-                    st.image(output_svg.encode(), use_container_width=True)
+                    st.components.v1.html(output_svg, height=300, scrolling=True)
 
                 st.success(f"変換完了！ {len(paths)} 本のストロークパスを生成しました")
 

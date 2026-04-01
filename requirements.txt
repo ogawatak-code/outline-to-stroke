@@ -1,0 +1,6 @@
+streamlit
+cairosvg
+numpy
+scikit-image
+lxml
+Pillow
